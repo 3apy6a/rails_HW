@@ -10,8 +10,9 @@ Content-Type: application/json
 {
   "post": {
     "title": "TITLE",
-    "body" : "Bla Bla Blog",
-    "author_id": "2"
+    "body": "Bla Bla Blog",
+    "author_id": 2
+
     }
 }
 

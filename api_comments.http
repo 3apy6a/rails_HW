@@ -1,19 +1,28 @@
-GET http://localhost:3000/api/comments
+GET http://localhost:3000/api/comment
 Accept: application/json
 
 ###
 
-POST http://localhost:3000/api/comments
+POST http://localhost:3000/api/comment
+Accept: application/json
+Content-Type: application/json
+
+{
+  "comment": {
+    "body": "Bla Bla",
+    "author_id": 2
+
+    }
+}
+
+###
+
+PUT http://localhost:3000/api/comment
 Accept: application/json
 
 ###
 
-PUT http://localhost:3000/api/comments
-Accept: application/json
-
-###
-
-DELETE http://localhost:3000/api/comments
+DELETE http://localhost:3000/api/comment
 Accept: application/json
 
 ###
