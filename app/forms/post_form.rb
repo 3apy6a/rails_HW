@@ -1,7 +1,7 @@
 class PostForm
   include ActiveModel::Model
 
-  ATTRIBUTES = [ :title, :body ]
+  ATTRIBUTES = [ :title, :body, :author_id ]
 
   attr_accessor :post, :success
   attr_accessor *ATTRIBUTES

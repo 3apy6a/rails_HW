@@ -1,15 +1,15 @@
 class CommentForm
   include ActiveModel::Model
 
-  ATTRIBUTES = [ :body ]
+  ATTRIBUTES = [ :body, :author_id ]
 
   attr_accessor :comment, :success
   attr_accessor *ATTRIBUTES
 
   validates_presence_of ATTRIBUTES
 
-  def initialize(attributes, comments = Comment.new)
-    self.post = comments
+  def initialize(attributes, comment = Comment.new)
+    self.comment = comment
 
     super(attributes)
   end
@@ -28,13 +28,13 @@ class CommentForm
   end
 
   def serialized_record
-    post.slice(*ATTRIBUTES)
+    comment.slice(*ATTRIBUTES)
   end
 
   private
 
   def persist!
-    post.update!(comment_attributes)
+    comment.update!(comment_attributes)
   end
 
   def comment_attributes
